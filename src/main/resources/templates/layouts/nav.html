@@ -23,6 +23,15 @@
                     </ul>
                 </div>
 
+
+                <div class="collapse navbar-collapse" id="navbarHome">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" th:href="@{/}">Home<span class="sr-only"></span></a>
+                        </li>
+                    </ul>
+                </div>
+
                 <div class="collapse navbar-collapse" id="navbarNavDarkDropdown0">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
@@ -128,7 +137,7 @@
                     clockElement.textContent = date.toLocaleString();
                 }
                 // Clock refresh timer, a reoccurring event
-                setInterval(clock, 1000);
+                setInterval(clock, 1);
                 // End Clock Control
 
                 // Dark Mode Control
