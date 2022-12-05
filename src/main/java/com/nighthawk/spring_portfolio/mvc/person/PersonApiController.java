@@ -118,9 +118,9 @@ public class PersonApiController {
             person.setStats(date_map);  
 
             // Set stat array to array with appended hashmap
-            ArrayList<Map<String,Map<String, Object>>> combArray = person.getStatArray();
-            combArray.add(date_map);
-            person.setStatArray(combArray);
+            ArrayList<Map<String,Map<String, Object>>> combinedArray = person.getStatArray();
+            combinedArray.add(date_map);
+            person.setStatArray(combinedArray);
 
             repository.save(person);  // conclude by writing the stats updates
 
