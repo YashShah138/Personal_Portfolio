@@ -10,6 +10,6 @@ public class Main {
     // Starts a spring application as a stand-alone application from the main method
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
-        System.out.println("http://localhost:8085");
+        System.out.println("Ready");
     }
 }
