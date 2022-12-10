@@ -3,17 +3,16 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML 5 Boilerplate</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <input type="number" year="year" id="yearInput"></input>
-    <button onclick="firstDayOfYear(document.getElementById('yearInput').value)">Send</button>
-    <div id="day"></div>
+    <button onclick="dayOfWeek(document.getElementById('yearInput').value)">Send</button>
+    <div id="year"></div>
     <script>
-        function firstDayOfYear(year){
-            fetch("/api/calendar/firstDayOfYear/"+year, {"method": "GET"})
+        function dayOfWeek(year) {
+            fetch("/api/calendar/dayOfWeek/" + year, {"method": "GET"})
             // response is a RESTful "promise" on any successful fetch
             .then(response => {
             // check for response errors
@@ -24,11 +23,26 @@
             // valid response will have JSON data
             response.json().then(data => {
                 console.log(data);
-                var leapYear = "";
-                if (data.isLeapYear === "false") {
-                leapYear = "not "
+                var dayOfWeek = "Sunday";
+                if (data.dayOfWeek == 1) {
+                  dayOfWeek = "Monday"
                 }
-                document.getElementById("day").innerText = data.year + " is " + leapYear + "a leap year";
+                if (data.dayOfWeek == 2) {
+                  dayOfWeek = "Tuesday"
+                }
+                if (data.dayOfWeek == 3) {
+                  dayOfWeek = "Wednesday"
+                }
+                if (data.dayOfWeek == 4) {
+                  dayOfWeek = "Thursday"
+                }
+                if (data.dayOfWeek == 5) {
+                  dayOfWeek = "Friday"
+                }
+                if (data.dayOfWeek == 6) {
+                  dayOfWeek = "Saturday"
+                }
+                document.getElementById("year").innerText = data.year + " is " + dayOfWeek + "a leap year";
             })
             })
             // catch fetch errors (ie Nginx ACCESS to server blocked)

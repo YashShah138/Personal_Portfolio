@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class Test {
 
-    @GetMapping("/FRQs/test")
+    @GetMapping("FRQs/test")
     // @RequestParam handles variables binding to frontend, defaults, etc
     public String test() {
         
