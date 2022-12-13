@@ -15,7 +15,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api/lightboard/")
-public class LightBoardAPI {
+public class LightBoardApi {
 
     private LightBoard lightBoard;
     private JsonNode json;
